@@ -7,13 +7,22 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class shoppingCartTest {
+
+  private ShoppingCart shoppingCart;
   @BeforeEach
   public void createCart() {
-    ShoppingCart shoppingCart = new ShoppingCart();
+
+    shoppingCart = new ShoppingCart();
   }
 
   @Test
   public void emptyTest() {
     assertEquals(true, true);
   }
+
+  @Test
+  public void isCartEmpty() {
+    shoppingCart.empty();
+    assertEquals(0, shoppingCart.getItemCount(), 0.0001);}
 }
+
